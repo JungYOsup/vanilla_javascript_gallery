@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 20%;
+  transition: all 1s;
+}
+
+.clicked {
+  transition-timing-function: cubic-bezier(0.44, -0.86, 0.82, 1);
+  width: 50%;
+}
+.box .item p {
+  font-family: "Indie Flower", cursive;
+  color: #f8f8ff;
+  font-size: 30px;
+}
+p:nth-child(odd) {
+  position: relative;
+  visibility: hidden;
+}
+.clicked p {
+  animation-name: move-p;
+  animation-duration: 1000ms;
+  visibility: visible;
+}
+
+/* animation */
+
+@keyframes move-p {
+  from {
+    top: -50px;
+  }
+  to {
+    top: 0;
+  }
+}
+
+/* utility */
+
+.img_one {
+  background-image: url(img/jeju01.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.img_two {
+  background-image: url(img/jeju02.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img_three {
+  background-image: url(img/jeju03.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.img_four {
+  background-image: url(img/jeju04.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img_five {
+  background-image: url(img/jeju05.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* phone */
+@media screen and (max-width: 1000px) {
+  .box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  p:nth-child(odd) {
+    position: relative;
+    visibility: visible;
+  }
+  .box .item p:nth-child(even) {
+    font-size: 100px;
+  }
+  .item {
+    width: 100%;
+    transition: none;
+  }
+}
